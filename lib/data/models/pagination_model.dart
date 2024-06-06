@@ -19,9 +19,7 @@ class PaginationModel<T> {
       total: json['total'],
       skip: json['skip'],
       limit: json['limit'],
-      data: json['recipes'] != null
-          ? List<T>.from(json['recipes'].map((x) => create(x)))
-          : [],
+      data: List<T>.from(json['recipes'].map((x) => create(x))),
     );
   }
 }
