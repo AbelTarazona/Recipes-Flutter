@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_aplazo/core/bloc/base/base_screen_bloc.dart';
+import 'package:recipes_aplazo/core/config/app_colors.dart';
 import 'package:recipes_aplazo/core/widgets/animated_grid_widget.dart';
 import 'package:recipes_aplazo/core/widgets/infinite_scroll_mixin.dart';
 import 'package:recipes_aplazo/domain/entities/pagination.dart';
 import 'package:recipes_aplazo/domain/entities/recipe.dart';
 import 'package:recipes_aplazo/presentation/home/bloc/recipe_bloc.dart';
 import 'package:recipes_aplazo/presentation/home/widgets/recipe_card.dart';
+import 'package:recipes_aplazo/presentation/home/widgets/recipe_empty.dart';
 
 class RecipeList extends StatefulWidget {
   const RecipeList({super.key});
@@ -35,12 +37,12 @@ class _RecipeListState extends State<RecipeList>
             isError: state.status.isError,
             controller: _scrollController,
             physics: const BouncingScrollPhysics(),
-            loadingWidget: const CircularProgressIndicator(),
+            loadingWidget: const CircularProgressIndicator(color: AppColors.codGray,),
             scrollDirection: Axis.vertical,
             isPaginated: isPagination,
             shrinkWrap: true,
             errorWidget: const SizedBox(),
-            emptyWidget: const SizedBox(),
+            emptyWidget: const RecipeEmpty(),
             itemBuilder: (item) {
               return RecipeCard(recipe: item);
             },
