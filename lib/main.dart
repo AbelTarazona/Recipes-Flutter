@@ -13,6 +13,7 @@ void main() {
   };
   setupDiCore();
   Bloc.observer = const AppBlocObserver();
+  ChuckerFlutter.showNotification = false;
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: 'Recoleta'
       ),
       home: HomePage(),
       navigatorObservers: [ChuckerFlutter.navigatorObserver],

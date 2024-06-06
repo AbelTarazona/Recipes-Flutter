@@ -33,5 +33,14 @@ dev_dependencies:
   build_runner: ^2.4.11
 
 flutter:
+  fonts:
+    - family: Recoleta
+      fonts:
+        - asset: assets/fonts/Recoleta-Light.ttf
+        - asset: assets/fonts/Recoleta-Regular.ttf
+        - asset: assets/fonts/Recoleta-SemiBold.ttf
+        - asset: assets/fonts/Recoleta-Bold.ttf
+  assets:
+      - assets/images/
 
   uses-material-design: true
