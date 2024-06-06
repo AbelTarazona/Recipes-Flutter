@@ -13,9 +13,16 @@ dependencies:
 
   # Network
   http: ^1.2.1
+  chucker_flutter: ^1.7.2
+  connectivity_plus: ^6.0.3
 
+  # UI
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
+  bloc: ^8.1.4
+  get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:

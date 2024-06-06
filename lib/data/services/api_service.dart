@@ -1,10 +1,11 @@
 import 'dart:convert';
 
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:recipes_aplazo/data/exceptions/api_exception.dart';
 
 class ApiService {
-  final http.Client client;
+  final ChuckerHttpClient client;
   final String baseUrl;
 
   ApiService({required this.client, required this.baseUrl});
