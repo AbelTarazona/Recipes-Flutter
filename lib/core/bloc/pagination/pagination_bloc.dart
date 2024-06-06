@@ -9,7 +9,7 @@ import 'package:recipes_aplazo/domain/entities/pagination.dart';
 abstract class PaginationBloc<T> extends BaseScreenBloc<Pagination<T>> {
   PaginationBloc({required super.hasConnection});
 
-  final int pageSize = 10;
+  final int pageSize = 15;
   int page = 0;
 
   @override
@@ -31,7 +31,7 @@ abstract class PaginationBloc<T> extends BaseScreenBloc<Pagination<T>> {
     }
     if (!isOtherData &&
         (state.status.isLoading ||
-            (state.value != null && state.value!.data.isEmpty))) {
+            (state.value != null && (state.value!.skip + state.value!.limit >= state.value!.total)))) {
       log('PaginationBloc: State is loading or next is null');
       return;
     }
