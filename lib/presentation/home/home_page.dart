@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_aplazo/core/bloc/base/base_screen_bloc.dart';
 import 'package:recipes_aplazo/core/bloc/pagination/pagination_params.dart';
+import 'package:recipes_aplazo/core/config/app_colors.dart';
 import 'package:recipes_aplazo/core/di_core.dart';
-import 'package:recipes_aplazo/domain/entities/pagination.dart';
-import 'package:recipes_aplazo/domain/entities/recipe.dart';
 import 'package:recipes_aplazo/presentation/home/bloc/recipe_bloc.dart';
+import 'package:recipes_aplazo/presentation/home/widgets/header.dart';
+import 'package:recipes_aplazo/presentation/home/widgets/recipe_list.dart';
+import 'package:recipes_aplazo/presentation/home/widgets/searcher.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -40,45 +42,27 @@ class _HomeViewState extends State<_HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bianca,
       appBar: AppBar(
-        title: const Text('Recipes'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.document_scanner),
-            onPressed: () {
-              ChuckerFlutter.showChuckerScreen();
-            },
-          ),
-        ],
+        backgroundColor: AppColors.bianca,
+        leading: IconButton(
+          icon: const Icon(Icons.rice_bowl),
+          onPressed: () {
+            ChuckerFlutter.showChuckerScreen();
+          },
+        ),
       ),
-      body: BlocBuilder<RecipeBloc, BaseScreenState<Pagination<Recipe>>>(
-        builder: (context, state) {
-          if (state.status.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          if (state.status.isError) {
-            return Center(
-              child: Text(state.message),
-            );
-          }
-          if (state.value == null) {
-            return const Center(
-              child: Text('No data'),
-            );
-          }
-          return ListView.builder(
-            itemCount: state.value!.data.length,
-            itemBuilder: (context, index) {
-              final recipe = state.value!.data[index];
-              return ListTile(
-                title: Text(recipe.name),
-                subtitle: Text(recipe.difficulty),
-              );
-            },
-          );
-        },
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            Header(),
+            SizedBox(height: 20),
+            Searcher(),
+            SizedBox(height: 30),
+            RecipeList()
+          ],
+        ),
       ),
     );
   }
