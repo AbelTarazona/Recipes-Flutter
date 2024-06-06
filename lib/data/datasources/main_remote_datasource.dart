@@ -18,9 +18,8 @@ class MainRemoteDatasource implements IMainRemoteDatasource {
     FilterModel? filter,
   }) async {
     try {
-      final response = await apiService.get(endpoint: 'recipes');
-      PaginationModel<RecipeModel> itemModel =
-          PaginationModel<RecipeModel>.fromJson(response, RecipeModel.fromJson);
+      final response = await apiService.get(endpoint: 'recipes', queryParams: filter?.toMap());
+      PaginationModel<RecipeModel> itemModel = PaginationModel<RecipeModel>.fromJson(response, RecipeModel.fromJson);
       return itemModel;
     } on ApiException catch (e) {
       throw GeneralException(e.detail);
@@ -36,10 +35,8 @@ class MainRemoteDatasource implements IMainRemoteDatasource {
     required String query,
   }) async {
     try {
-      final response =
-          await apiService.get(endpoint: 'recipes/search?q=$query');
-      PaginationModel<RecipeModel> itemModel =
-          PaginationModel<RecipeModel>.fromJson(response, RecipeModel.fromJson);
+      final response = await apiService.get(endpoint: 'recipes/search?q=$query', queryParams: filter?.toMap());
+      PaginationModel<RecipeModel> itemModel = PaginationModel<RecipeModel>.fromJson(response, RecipeModel.fromJson);
       return itemModel;
     } on ApiException catch (e) {
       throw GeneralException(e.detail);
