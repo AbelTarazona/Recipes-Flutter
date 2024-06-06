@@ -62,7 +62,7 @@ void main() {
 
     test('returns a PaginationModel when recipes is called', () async {
       // Define the behavior of the mock ApiService
-      when(mockApiService.get(endpoint: 'recipes'))
+      when(mockApiService.get(endpoint: 'recipes?limit=10&skip=0'))
           .thenAnswer((_) async => jsonExample);
 
       // Call the method and verify the result
@@ -73,7 +73,7 @@ void main() {
 
     test('returns a PaginationModel when searchRecipe is called', () async {
       // Define the behavior of the mock ApiService
-      when(mockApiService.get(endpoint: 'recipes/search?q=query'))
+      when(mockApiService.get(endpoint: 'recipes/search?limit=10&skip=0&q=query'))
           .thenAnswer((_) async => jsonExample);
 
       // Call the method and verify the result

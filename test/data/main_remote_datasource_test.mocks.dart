@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
 
-import 'package:http/http.dart' as _i2;
+import 'package:chucker_flutter/chucker_flutter.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i4;
 import 'package:recipes_aplazo/data/services/api_service.dart' as _i3;
@@ -23,8 +23,9 @@ import 'package:recipes_aplazo/data/services/api_service.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeClient_0 extends _i1.SmartFake implements _i2.Client {
-  _FakeClient_0(
+class _FakeChuckerHttpClient_0 extends _i1.SmartFake
+    implements _i2.ChuckerHttpClient {
+  _FakeChuckerHttpClient_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -42,13 +43,13 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
   }
 
   @override
-  _i2.Client get client => (super.noSuchMethod(
+  _i2.ChuckerHttpClient get client => (super.noSuchMethod(
         Invocation.getter(#client),
-        returnValue: _FakeClient_0(
+        returnValue: _FakeChuckerHttpClient_0(
           this,
           Invocation.getter(#client),
         ),
-      ) as _i2.Client);
+      ) as _i2.ChuckerHttpClient);
 
   @override
   String get baseUrl => (super.noSuchMethod(
