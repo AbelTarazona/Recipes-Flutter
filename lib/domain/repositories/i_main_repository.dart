@@ -16,4 +16,6 @@ abstract class IMainRepository {
     Filter? filter,
     required String query,
   });
+
+  Future<Either<Failure, List<Recipe>>> localRecipes();
 }
