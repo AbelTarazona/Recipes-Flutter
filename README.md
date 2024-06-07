@@ -1,16 +1,38 @@
-# recipes_aplazo
+# Aplazo Technical Challenge
 
-A new Flutter project.
+Este repositorio contiene la solución al reto técnico de la empresa Aplazo, desarrollado con Flutter. La aplicación está diseñada para cumplir con los requisitos establecidos en el desafío y demostrar mis habilidades en el desarrollo de aplicaciones móviles usando Flutter.
 
-## Getting Started
+## Tabla de Contenidos
 
-This project is a starting point for a Flutter application.
+- [Descripción](#descripción)
+- [Demo](#demo)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Consideraciones](#consideraciones)
 
-A few resources to get you started if this is your first Flutter project:
+## Descripción
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Este proyecto es una aplicación móvil desarrollada para el reto técnico de Aplazo. La aplicación incluye home, detalle, buscador y favoritos de recetas.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demo
+
+Mira la demo de la aplicación en YouTube:
+
+[![Demo de la aplicación](https://img.youtube.com/vi/qVa3vYTcI5M/0.jpg)](https://youtu.be/qVa3vYTcI5M)
+
+## Tecnologías Utilizadas
+
+- **Flutter**: Framework de desarrollo móvil
+- **Dart**: Lenguaje de programación utilizado con Flutter
+- **DummyJSON API**: Servicio utilizado para obtener recetas. Más información en [DummyJSON Recipes API](https://dummyjson.com/docs/recipes).
+
+## Consideraciones
+
+- [x] Agregar UX
+- [x] UI premium
+- [x] Animaciones en transiciones
+- [x] Poder agregar una receta a favoritos mediante Localstorage o Isar.
+- [x] Mostrar empty state
+- [x] Bloc
+- [x] Clean architecture
+- [x] Unit Test en data layer
+- [x] Documentación de código en datasources
