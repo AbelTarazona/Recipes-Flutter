@@ -45,6 +45,7 @@ class _HomeViewState extends State<_HomeView> {
     return Scaffold(
       backgroundColor: AppColors.bianca,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         backgroundColor: AppColors.bianca,
         leading: IconButton(
           icon: const Icon(Icons.rice_bowl),

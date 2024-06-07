@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipes_aplazo/core/bloc/base/base_screen_bloc.dart';
 import 'package:recipes_aplazo/core/config/app_colors.dart';
 import 'package:recipes_aplazo/domain/entities/recipe.dart';
+import 'package:recipes_aplazo/presentation/favorite/bloc/save_favorite_bloc.dart';
+import 'package:recipes_aplazo/presentation/favorite/bloc/save_favorite_params.dart';
 
 class Description extends StatelessWidget {
   const Description({super.key, required this.recipe});
@@ -34,18 +38,36 @@ class Description extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                color: AppColors.mossGreen,
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.bookmark_border_rounded,
-                color: AppColors.codGray,
-              ),
+            BlocBuilder<SaveFavoriteBloc, BaseScreenState>(
+              builder: (context, state) {
+                if (state.status.isLoading) {
+                  return const CircularProgressIndicator(color: AppColors.mossGreen,);
+                } else if (state.status.isLoaded) {
+                  return const Icon(Icons.check, color: AppColors.mossGreen,);
+                }
+                return InkWell(
+                  onTap: () {
+                    BlocProvider.of<SaveFavoriteBloc>(context).add(
+                      CallAction(params: SaveFavoriteParams(recipe: recipe)),
+                    );
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                      color: AppColors.mossGreen,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.bookmark_border_rounded,
+                      color: AppColors.codGray,
+                    ),
+                  ),
+                );
+              },
             ),
-            const SizedBox(width: 10,)
+            const SizedBox(
+              width: 10,
+            )
           ],
         ),
         const SizedBox(
