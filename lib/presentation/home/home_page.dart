@@ -5,6 +5,7 @@ import 'package:recipes_aplazo/core/bloc/base/base_screen_bloc.dart';
 import 'package:recipes_aplazo/core/bloc/pagination/pagination_params.dart';
 import 'package:recipes_aplazo/core/config/app_colors.dart';
 import 'package:recipes_aplazo/core/di_core.dart';
+import 'package:recipes_aplazo/presentation/favorite/favorite_page.dart';
 import 'package:recipes_aplazo/presentation/home/bloc/recipe_bloc.dart';
 import 'package:recipes_aplazo/presentation/home/widgets/header.dart';
 import 'package:recipes_aplazo/presentation/home/widgets/recipe_list.dart';
@@ -51,6 +52,14 @@ class _HomeViewState extends State<_HomeView> {
             ChuckerFlutter.showChuckerScreen();
           },
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.bookmark_border_rounded, color: AppColors.codGray,),
+            onPressed: () {
+              Navigator.of(context).push(FavoritePage.route());
+            },
+          ),
+        ],
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
