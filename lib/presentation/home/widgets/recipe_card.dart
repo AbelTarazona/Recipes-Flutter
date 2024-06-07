@@ -16,11 +16,17 @@ class RecipeCard extends StatelessWidget {
       },
       child: Column(
         children: [
-          Image.network(
-            recipe.image,
-            width: 100,
-            height: 100,
-            fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Hero(
+              tag: 'hero-${recipe.id}',
+              child: Image.network(
+                recipe.image,
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           const SizedBox(
             height: 10,

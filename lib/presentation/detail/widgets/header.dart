@@ -33,11 +33,14 @@ class Header extends StatelessWidget {
         ),
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.network(
-            recipe.image,
-            width: double.infinity,
-            height: 200,
-            fit: BoxFit.cover,
+          child: Hero(
+            tag: 'hero-${recipe.id}',
+            child: Image.network(
+              recipe.image,
+              width: double.infinity,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ],
