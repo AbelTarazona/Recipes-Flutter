@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class RecipeEmpty extends StatelessWidget {
-  const RecipeEmpty({super.key});
+class EmptyState extends StatelessWidget {
+  const EmptyState({super.key, required this.message});
+
+  final String message;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,9 @@ class RecipeEmpty extends StatelessWidget {
           children: [
             Image.asset('assets/images/empty.png', height: 150),
             const SizedBox(height: 20),
-            const Text(
-              'No hay recetas disponibles en este momento. Por favor, vuelve más tarde o prueba con otra búsqueda.',
-              style: TextStyle(fontSize: 16),
+            Text(
+              message,
+              style: const TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ],

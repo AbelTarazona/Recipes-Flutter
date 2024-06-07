@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_aplazo/core/bloc/base/base_screen_bloc.dart';
 import 'package:recipes_aplazo/core/config/app_colors.dart';
 import 'package:recipes_aplazo/core/widgets/animated_grid_widget.dart';
+import 'package:recipes_aplazo/core/widgets/empty_state.dart';
 import 'package:recipes_aplazo/core/widgets/infinite_scroll_mixin.dart';
 import 'package:recipes_aplazo/domain/entities/pagination.dart';
 import 'package:recipes_aplazo/domain/entities/recipe.dart';
 import 'package:recipes_aplazo/presentation/home/widgets/recipe_card.dart';
-import 'package:recipes_aplazo/presentation/home/widgets/recipe_empty.dart';
 import 'package:recipes_aplazo/presentation/search/bloc/search_recipe_bloc.dart';
 
 class SearchList extends StatefulWidget {
@@ -43,8 +43,7 @@ class _SearchListState extends State<SearchList>
             scrollDirection: Axis.vertical,
             isPaginated: isPagination,
             shrinkWrap: true,
-            errorWidget: const SizedBox(),
-            emptyWidget: const RecipeEmpty(),
+            emptyWidget: const EmptyState(message: 'There are no recipes available at this time. Try another search.'),
             itemBuilder: (item) {
               return RecipeCard(recipe: item);
             },
