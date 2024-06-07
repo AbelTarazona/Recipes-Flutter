@@ -19,6 +19,8 @@ Mira la demo de la aplicación en YouTube:
 
 [![Demo de la aplicación](https://img.youtube.com/vi/qVa3vYTcI5M/0.jpg)](https://youtu.be/qVa3vYTcI5M)
 
+APK en el siguiente link [APK](https://drive.google.com/drive/folders/1S_-TbBSSHUQr5pD7ChILHQcH9Uc8X2WS?usp=sharing)
+
 ## Tecnologías Utilizadas
 
 - **Flutter**: Framework de desarrollo móvil
