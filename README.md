@@ -26,6 +26,8 @@ APK en el siguiente link [APK](https://drive.google.com/drive/folders/1S_-TbBSSH
 - **Flutter**: Framework de desarrollo móvil
 - **Dart**: Lenguaje de programación utilizado con Flutter
 - **DummyJSON API**: Servicio utilizado para obtener recetas. Más información en [DummyJSON Recipes API](https://dummyjson.com/docs/recipes).
+- **Chucker**: Http Interceptor. Más información en [Chucker](https://pub.dev/packages/chucker_flutter).
+- **Isar**: Base de datos NoSQL local . Más información en [Isar](https://pub.dev/packages/isar).
 
 ## Consideraciones
 
