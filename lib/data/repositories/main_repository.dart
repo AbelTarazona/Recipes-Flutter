@@ -60,4 +60,14 @@ class MainRepository implements IMainRepository {
       return Left(Failure(e.message));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> saveRecipe({required Recipe recipe}) async {
+    try {
+      await mainLocalDatasource.saveRecipe(recipe: recipe.toLocalModel());
+      return const Right(null);
+    } on GeneralException catch (e) {
+      return Left(Failure(e.message));
+    }
+  }
 }

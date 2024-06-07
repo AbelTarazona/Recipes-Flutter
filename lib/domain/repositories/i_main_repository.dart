@@ -18,4 +18,6 @@ abstract class IMainRepository {
   });
 
   Future<Either<Failure, List<Recipe>>> localRecipes();
+
+  Future<Either<Failure, void>> saveRecipe({required Recipe recipe});
 }

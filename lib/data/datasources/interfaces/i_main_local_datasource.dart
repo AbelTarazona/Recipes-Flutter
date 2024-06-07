@@ -12,14 +12,14 @@ abstract class IMainLocalDatasource {
   /// If there is an error fetching the data, this future will complete with error.
   Future<List<RecipeLocalModel>> recipes();
 
-  /// Saves a [RecipeModel] to the local data source.
+  /// Saves a [RecipeLocalModel] to the local data source.
   ///
-  /// This method is used to store a recipe represented by a [RecipeModel]
+  /// This method is used to store a recipe represented by a [RecipeLocalModel]
   /// into the local data source.
   ///
   /// The [recipe] parameter is required and it represents the recipe to be stored.
   ///
   /// This method returns a [Future] that completes when the recipe is successfully saved.
   /// If there is an error saving the recipe, this future will complete with error.
-  Future<void> saveRecipe({required RecipeModel recipe});
+  Future<void> saveRecipe({required RecipeLocalModel recipe});
 }

@@ -77,3 +77,18 @@ extension RecipeLocalModelMapper on RecipeLocalModel {
     );
   }
 }
+
+extension RecipeLocalMapper on Recipe {
+  RecipeLocalModel toLocalModel() {
+    return RecipeLocalModel(
+      name: name,
+      ingredients: ingredients,
+      instructions: instructions,
+      prepTimeMinutes: prepTimeMinutes,
+      difficulty: difficulty,
+      cuisine: cuisine,
+      image: image,
+      reviewCount: reviewCount,
+    );
+  }
+}

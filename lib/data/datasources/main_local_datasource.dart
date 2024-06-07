@@ -29,5 +29,19 @@ class MainLocalDatasource implements IMainLocalDatasource {
   }
 
   @override
-  Future<void> saveRecipe({required RecipeModel recipe}) async {}
+  Future<void> saveRecipe({required RecipeLocalModel recipe}) async {
+    try {
+      final existingRecipe = await _isar.recipeLocalModels
+          .filter()
+          .nameEqualTo(recipe.name)
+          .findFirst();
+      if (existingRecipe == null) {
+        await _isar.writeTxn(() async {
+          await _isar.recipeLocalModels.put(recipe);
+        });
+      }
+    } catch (e) {
+      throw GeneralException('Error al guardar receta: $e');
+    }
+  }
 }

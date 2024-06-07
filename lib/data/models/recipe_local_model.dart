@@ -13,4 +13,15 @@ class RecipeLocalModel {
   String? cuisine;
   String? image;
   int? reviewCount;
+
+  RecipeLocalModel({
+    this.name,
+    this.ingredients,
+    this.instructions,
+    this.prepTimeMinutes,
+    this.difficulty,
+    this.cuisine,
+    this.image,
+    this.reviewCount,
+  });
 }
