@@ -1,6 +1,6 @@
-# Aplazo Technical Challenge
+# Recipes Flutter
 
-Este repositorio contiene la solución al reto técnico de la empresa Aplazo, desarrollado con Flutter. La aplicación está diseñada para cumplir con los requisitos establecidos en el desafío y demostrar mis habilidades en el desarrollo de aplicaciones móviles usando Flutter.
+La aplicación está diseñada para cumplir con los requisitos establecidos en el desafío y demostrar mis habilidades en el desarrollo de aplicaciones móviles usando Flutter.
 
 ## Tabla de Contenidos
 
@@ -11,7 +11,7 @@ Este repositorio contiene la solución al reto técnico de la empresa Aplazo, de
 
 ## Descripción
 
-Este proyecto es una aplicación móvil desarrollada para el reto técnico de Aplazo. La aplicación incluye home, detalle, buscador y favoritos de recetas.
+La aplicación incluye home, detalle, buscador y favoritos de recetas.
 
 ## Demo
 
